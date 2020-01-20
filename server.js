@@ -2,6 +2,9 @@ const express = require('express');
 const connectDB = require('./config/db');
 const app = express();
 connectDB();
+
+//initilizing middleware
+app.use(express.json({ extended: false }));
 app.get('/', (req, res) => res.send('API CHAL RAHA H  Running'));
 
 // Define Routes
